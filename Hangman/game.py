@@ -5,18 +5,6 @@ import words
 import figurine
 
 
-SEPARATOR = '=' * 45
-
-def introduction ():
-    '''
-    Print introduction and basic rules
-    '''
-    print(f'Welcome to our game Hangman!!!\n'
-          f'The aim of this game is find secret word.\n'
-          f'You can quess one later or the whole word.\n'
-          f'You have 7 attempts so good luck :)\n'
-          f'{SEPARATOR}')
-
 def generate_random_word():
     '''
     Generate random word form list of words.
@@ -93,7 +81,7 @@ def hangman():
             actual_lives -= 1
             if actual_lives == 0:
                 print(word)
-
+        os.system("cls")
     else:
         os.system("cls")
         final_figurine = drawing_gallows(actual_lives)
@@ -104,7 +92,6 @@ def main():
     '''
     Start the game Hangman
     '''
-    introduction()
     hangman()
 
 
